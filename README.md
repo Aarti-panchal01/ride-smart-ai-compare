@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# 🚖 RideCompare.AI – Ride Smart
 
-## Project info
+**🔗 Live Demo**: [preview--ride-smart-ai-compare.lovable.app](https://preview--ride-smart-ai-compare.lovable.app)
 
-**URL**: https://lovable.dev/projects/1f1c48c9-d50e-4c90-9a75-ba108b701acd
+A smart AI-powered assistant that compares ride fares, ETAs, and travel options across **Ola**, **Uber**, and **Rapido** based on your source and destination. Save time and money with real-time insights and intelligent ride suggestions.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧠 What It Does
 
-**Use Lovable**
+- 🔍 **Compare Fares & ETAs** across top ride platforms
+- 🎯 **Get Smart Recommendations** based on speed, cost, or convenience
+- 📊 **Predict Fare Ranges** (if live data is unavailable)
+- 📍 **Google Maps Integration** for distance and route estimation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1f1c48c9-d50e-4c90-9a75-ba108b701acd) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- Real-time comparison of multiple ride providers
+- Clean and mobile-responsive interface
+- Intelligent suggestions based on user priorities
+- Lightweight and fast (built with Python & Streamlit)
+- Scalable design for future booking integrations or surge forecasting
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Tech Stack
 
-Follow these steps:
+- **Frontend**: Streamlit (Preview Version)
+- **Backend**: Python, Flask/FastAPI (modular setup)
+- **Data/API**: Google Maps API, Uber API, Web Scraping (fallback)
+- **ML**: Fare Estimation Model (Random Forest/XGBoost)
+- **Hosting**: Lovable.app Preview
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Run Locally
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+git clone https://github.com/Aarti-pancgal01/ridecompare-ai.git
+cd ridecompare-ai
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+# Create a virtual environment
+python -m venv env
+source env/bin/activate   # or .\env\Scripts\activate on Windows
 
-**Edit a file directly in GitHub**
+# Install requirements
+pip install -r requirements.txt
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Run the app
+streamlit run app.py
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+⚠️ Limitations
+Ola and Rapido do not expose public APIs – fallback is estimation or scraping.
+Exact fares may vary due to dynamic pricing (surge, traffic).
+Booking is not yet integrated (comparison only).
 
-## What technologies are used for this project?
+📌 Future Ideas
+📱 Native mobile app (React Native or Flutter)
+🔁 Booking and payment integration
+📊 Surge pricing forecast model
+🗣️ Voice assistant + Multilingual support
 
-This project is built with:
+👨‍💻 Author
+[Your Name]
+AI Developer | B.Tech Student 
+📫 [aartipanchal539@gmail.com] | 🌐 LinkedIn
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1f1c48c9-d50e-4c90-9a75-ba108b701acd) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
