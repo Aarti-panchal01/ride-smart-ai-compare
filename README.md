@@ -5,14 +5,12 @@
 A smart AI-powered assistant that compares ride fares, ETAs, and travel options across **Ola**, **Uber**, and **Rapido** based on your source and destination. Save time and money with real-time insights and intelligent ride suggestions.
 
 ---
-
 ## 🧠 What It Does
 
 - 🔍 **Compare Fares & ETAs** across top ride platforms
 - 🎯 **Get Smart Recommendations** based on speed, cost, or convenience
 - 📊 **Predict Fare Ranges** (if live data is unavailable)
 - 📍 **Google Maps Integration** for distance and route estimation
-
 ---
 
 ## ✨ Features
@@ -22,7 +20,6 @@ A smart AI-powered assistant that compares ride fares, ETAs, and travel options 
 - Intelligent suggestions based on user priorities
 - Lightweight and fast (built with Python & Streamlit)
 - Scalable design for future booking integrations or surge forecasting
-
 ---
 
 ## 🚀 Tech Stack
@@ -52,11 +49,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-⚠️ Limitations
-Ola and Rapido do not expose public APIs – fallback is estimation or scraping.
-Exact fares may vary due to dynamic pricing (surge, traffic).
-Booking is not yet integrated (comparison only).
-
 📌 Future Ideas
 📱 Native mobile app (React Native or Flutter)
 🔁 Booking and payment integration
@@ -66,5 +58,5 @@ Booking is not yet integrated (comparison only).
 👨‍💻 Author
 Aarti Panchal
 AI Developer | B.Tech Student 
-📫 [aartipanchal539@gmail.com] | 🌐 LinkedIn
+📫 [aartipanchal539@gmail.com] | 🌐 LinkedIn-https://www.linkedin.com/in/aarti-panchal-93196a319/?trk=public-profile-join-page
 
