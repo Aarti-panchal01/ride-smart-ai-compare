@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     <nav className="w-full py-4">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-3xl font-bold">
+          <div className="text-3xl font-bold text-white">
             RideCompare<span className="text-cyan-300">.AI</span>
           </div>
         </div>
@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
           <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
             <Settings className="h-5 w-5" />
           </Button>
-          <Button className="bg-white text-purple-600 hover:bg-white/90">
+          <Button className="bg-white text-purple-700 hover:bg-white/90 font-medium">
             Login
           </Button>
         </div>

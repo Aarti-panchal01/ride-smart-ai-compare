@@ -5,7 +5,8 @@
 
 @layer base {
   :root {
-    --background: 252 86% 56%;
+    /* Updating the background gradient colors to be less bright and more purple-focused */
+    --background: 258 75% 45%;
     --foreground: 213 31% 91%;
 
     --card: 224 71% 4%;
@@ -44,15 +45,15 @@
     --sidebar-border: 217.2 32.6% 17.5%;
     --sidebar-ring: 212.7 26.8% 83.9%;
 
-    /* App specific colors */
-    --uber: 130 84% 38%;
-    --uber-transparent: 130 84% 38% / 0.15;
-    --ola: 196 97% 45%;
-    --ola-transparent: 196 97% 45% / 0.15;
-    --rapido: 45 100% 50%;
-    --rapido-transparent: 45 100% 50% / 0.15;
-    --gradient-start: 251 86% 56%;
-    --gradient-end: 258 90% 66%;
+    /* App specific colors - updated for better contrast */
+    --uber: 265 70% 60%;
+    --uber-transparent: 265 70% 60% / 0.25;
+    --ola: 200 85% 60%;
+    --ola-transparent: 200 85% 60% / 0.25;
+    --rapido: 40 95% 60%;
+    --rapido-transparent: 40 95% 60% / 0.25;
+    --gradient-start: 260 70% 40%;
+    --gradient-end: 270 75% 50%;
   }
 }
 
@@ -72,7 +73,7 @@
 
 @layer components {
   .glass {
-    @apply bg-white/15 backdrop-blur-md border border-white/10 rounded-lg shadow-lg;
+    @apply bg-white/20 backdrop-blur-md border border-white/20 rounded-lg shadow-lg;
   }
   
   .ride-card {
@@ -102,6 +103,6 @@
   }
   
   .location-input {
-    @apply bg-white/20 border-white/20 text-white placeholder:text-white/60;
+    @apply bg-white/25 border-white/30 text-white placeholder:text-white/70;
   }
 }

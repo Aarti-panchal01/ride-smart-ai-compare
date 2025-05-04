@@ -3,7 +3,6 @@ import React from 'react';
 import { Star, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import RideServiceLogo from './RideServiceLogo';
 
 export interface RideOptionProps {
   provider: 'uber' | 'ola' | 'rapido';
@@ -44,31 +43,36 @@ const RideOption: React.FC<RideOptionProps> = ({
       
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <RideServiceLogo provider={provider} />
+          {/* Replaced logo with text representation */}
+          <div className="text-lg font-bold">
+            {provider === 'uber' && 'Uber'}
+            {provider === 'ola' && 'Ola'}
+            {provider === 'rapido' && 'Rapido'}
+          </div>
           <div className="text-sm font-medium">{type}</div>
         </div>
         <div className="flex items-center space-x-1">
           <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-          <span className="text-sm">{rating}</span>
+          <span className="text-sm font-medium">{rating}</span>
         </div>
       </div>
       
       <div className="mt-4 flex justify-between items-end">
         <div>
           <div className="text-2xl font-bold">₹{fare}</div>
-          <div className="flex items-center text-xs text-gray-300 mt-1">
+          <div className="flex items-center text-xs font-medium text-white/80 mt-1">
             <Clock className="h-3 w-3 mr-1" />
             <span>ETA: {eta} min</span>
             <span className="mx-2">•</span>
             <span>{travelTime} min travel</span>
           </div>
           {recommended && recommendReason && (
-            <div className="mt-2 text-xs px-2 py-1 bg-white/10 rounded-full inline-block">
+            <div className="mt-2 text-xs font-medium px-2 py-1 bg-white/20 rounded-full inline-block">
               {recommendReason}
             </div>
           )}
         </div>
-        <Button size="sm" className="bg-white/20 hover:bg-white/30">
+        <Button size="sm" className="bg-white/30 hover:bg-white/40 text-white font-medium">
           Book <ArrowRight className="ml-1 h-3 w-3" />
         </Button>
       </div>
