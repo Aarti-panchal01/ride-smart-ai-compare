@@ -43,11 +43,11 @@ const LocationInput: React.FC<LocationInputProps> = ({ label, onLocationSelected
 
   return (
     <div className="relative">
-      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70">
         <MapPin className="h-5 w-5" />
       </div>
       <Input
-        className="pl-10 pr-12 py-6 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+        className="pl-10 pr-12 py-6 location-input"
         placeholder={`Enter ${label}`}
         value={value}
         onChange={handleInputChange}
@@ -56,14 +56,14 @@ const LocationInput: React.FC<LocationInputProps> = ({ label, onLocationSelected
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-2 top-1/2 transform -translate-y-1/2"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white hover:bg-white/10"
         onClick={handleDetectLocation}
         disabled={isDetecting}
       >
         {isDetecting ? (
-          <Loader2 className="h-5 w-5 animate-spin text-gray-400" />
+          <Loader2 className="h-5 w-5 animate-spin" />
         ) : (
-          <LocateFixed className="h-5 w-5 text-gray-400" />
+          <LocateFixed className="h-5 w-5" />
         )}
       </Button>
     </div>

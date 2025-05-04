@@ -58,7 +58,7 @@ const Index = () => {
                 />
                 
                 <Button 
-                  className="w-full bg-gradient-to-r from-blue-500 to-indigo-600"
+                  className="w-full compare-button"
                   onClick={handleRefreshRides}
                   disabled={!source || !destination || isLoading}
                 >

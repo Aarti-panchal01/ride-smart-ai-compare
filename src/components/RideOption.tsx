@@ -3,6 +3,7 @@ import React from 'react';
 import { Star, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import RideServiceLogo from './RideServiceLogo';
 
 export interface RideOptionProps {
   provider: 'uber' | 'ola' | 'rapido';
@@ -14,24 +15,6 @@ export interface RideOptionProps {
   recommended?: boolean;
   recommendReason?: string;
 }
-
-const providerLogos: Record<string, React.ReactNode> = {
-  uber: (
-    <div className="text-xl font-black tracking-tight">
-      <span className="text-[hsl(var(--uber))]">UBER</span>
-    </div>
-  ),
-  ola: (
-    <div className="text-xl font-black tracking-tight">
-      <span className="text-[hsl(var(--ola))]">OLA</span>
-    </div>
-  ),
-  rapido: (
-    <div className="text-xl font-black tracking-tight">
-      <span className="text-[hsl(var(--rapido))]">RAPIDO</span>
-    </div>
-  ),
-};
 
 const RideOption: React.FC<RideOptionProps> = ({
   provider,
@@ -61,7 +44,7 @@ const RideOption: React.FC<RideOptionProps> = ({
       
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          {providerLogos[provider]}
+          <RideServiceLogo provider={provider} />
           <div className="text-sm font-medium">{type}</div>
         </div>
         <div className="flex items-center space-x-1">
@@ -73,7 +56,7 @@ const RideOption: React.FC<RideOptionProps> = ({
       <div className="mt-4 flex justify-between items-end">
         <div>
           <div className="text-2xl font-bold">₹{fare}</div>
-          <div className="flex items-center text-xs text-gray-400 mt-1">
+          <div className="flex items-center text-xs text-gray-300 mt-1">
             <Clock className="h-3 w-3 mr-1" />
             <span>ETA: {eta} min</span>
             <span className="mx-2">•</span>
