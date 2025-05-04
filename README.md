@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 # Run the app
 streamlit run app.py
-
+```
 
 ⚠️ Limitations
 Ola and Rapido do not expose public APIs – fallback is estimation or scraping.
@@ -64,7 +64,7 @@ Booking is not yet integrated (comparison only).
 🗣️ Voice assistant + Multilingual support
 
 👨‍💻 Author
-[Your Name]
+Aarti Panchal
 AI Developer | B.Tech Student 
 📫 [aartipanchal539@gmail.com] | 🌐 LinkedIn
 
