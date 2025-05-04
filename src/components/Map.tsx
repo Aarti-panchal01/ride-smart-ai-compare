@@ -1,12 +1,71 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface MapProps {
   source?: string;
   destination?: string;
 }
 
+interface RouteInfo {
+  distance: string;
+  duration: string;
+}
+
 const Map: React.FC<MapProps> = ({ source, destination }) => {
+  const [routeInfo, setRouteInfo] = useState<RouteInfo>({
+    distance: '0',
+    duration: '0'
+  });
+
+  // Simulate fetching route information when source and destination change
+  useEffect(() => {
+    if (source && destination) {
+      // Simulate API call delay
+      const fetchRouteInfo = setTimeout(() => {
+        // Calculate a more realistic distance based on the locations
+        const getRouteDetails = () => {
+          // Define some known routes with more accurate distances
+          const knownRoutes: Record<string, RouteInfo> = {
+            'pesu rr-reva university': { distance: '38.8 km', duration: '1 hr 10 min' },
+            'pesu rr-downtown': { distance: '12.3 km', duration: '35 min' },
+            'downtown-marina': { distance: '5.7 km', duration: '15 min' },
+            'park view-green park': { distance: '7.9 km', duration: '22 min' },
+            'current location-reva university': { distance: '40.2 km', duration: '1 hr 15 min' },
+            'current location-downtown': { distance: '10.5 km', duration: '30 min' },
+          };
+
+          // Create normalized keys for lookup
+          const routeKey = `${source.toLowerCase()}-${destination.toLowerCase()}`;
+          const reverseRouteKey = `${destination.toLowerCase()}-${source.toLowerCase()}`;
+
+          // Return known route if it exists
+          if (knownRoutes[routeKey]) {
+            return knownRoutes[routeKey];
+          } else if (knownRoutes[reverseRouteKey]) {
+            return knownRoutes[reverseRouteKey];
+          }
+
+          // Generate realistic random values for unknown routes
+          // Use source and destination strings to create a deterministic but seemingly random distance
+          const combinedLength = (source.length + destination.length) % 10;
+          const baseDistance = 5 + combinedLength * 3.5; // Between 5-40 km
+          const baseDuration = Math.round(baseDistance * 1.8); // Approx 1.8 min per km
+
+          return {
+            distance: `${baseDistance.toFixed(1)} km`,
+            duration: baseDuration >= 60 
+              ? `${Math.floor(baseDuration / 60)} hr ${baseDuration % 60} min` 
+              : `${baseDuration} min`
+          };
+        };
+
+        setRouteInfo(getRouteDetails());
+      }, 500);
+
+      return () => clearTimeout(fetchRouteInfo);
+    }
+  }, [source, destination]);
+
   return (
     <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden glass relative">
       {/* Purple map background */}
@@ -96,9 +155,9 @@ const Map: React.FC<MapProps> = ({ source, destination }) => {
             </div>
           </div>
 
-          {/* Distance and time */}
+          {/* Distance and time - updated to use routeInfo */}
           <div className="text-md font-medium text-white bg-black/30 px-3 py-1 rounded mt-8">
-            ~8.5 km • ~25 min
+            {routeInfo.distance} • {routeInfo.duration}
           </div>
         </div>
       ) : (
