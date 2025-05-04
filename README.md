@@ -58,5 +58,5 @@ streamlit run app.py
 👨‍💻 Author
 Aarti Panchal
 AI Developer | B.Tech Student 
-📫 [aartipanchal539@gmail.com] | 🌐 LinkedIn-https://www.linkedin.com/in/aarti-panchal-93196a319/?trk=public-profile-join-page
+📫 [aartipanchal539@gmail.com] 
 
